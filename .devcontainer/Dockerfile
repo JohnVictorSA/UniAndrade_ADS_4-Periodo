@@ -1,4 +1,4 @@
-# Usar a imagem base do Ubuntu
+# Usar a imagem base do Ubuntu.
 FROM ubuntu:latest
 
 # Definir modo não interativo para evitar prompts
