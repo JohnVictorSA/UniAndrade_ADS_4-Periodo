@@ -34,8 +34,3 @@ print(pocao1)
     # cancele a possibilidade de incrementar ou decrementar saúde
     
 
-
-python
-    ---intro_poo
-    ---desafios
-       ---pocao.py
