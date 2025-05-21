@@ -1,49 +1,50 @@
 class Personagem:
     def __init__(self, nome):
         self.nome = nome
-        self.saude = 10
+        self.saude = 60
         self.vivo = True
         
     def usar_pocao(self, pocao):
-        if not self.vivo:
-            print(f"{self.nome} está morto e não pode usar poções.")
+        if (self.vivo == False):
+            print(f"Personagem está MORTO, não é possível usar nenhuma poção.")
             return
-
-        # Aplica o efeito da poção (pode ser positiva ou negativa)
-        self.saude += pocao.potencia
+        
         print(f"Personagem {self.nome} usou poção {pocao.tipo}")
-        print(f"Dano {pocao.potencia} saúde atual: {self.saude}")
-
-        # Verifica se o personagem morreu
-        if self.saude <= 0:
-            self.vivo = False
-            self.saude = 0
-            print(f"{self.nome} foi de arrasta pra cima")
-
+        print(f"Saude antes da poção: {self.saude}")
+        
+        if (pocao.tipo == "Cura"):
+            self.saude += pocao.potencia
+            print(f"Cura concedida: {pocao.potencia}\nTotal de saúde: {self.saude}\n")
+        
+        elif (pocao.tipo == "Dano"):
+            self.saude -= pocao.potencia
+            if self.saude <= 0:
+                self.vivo = False
+                print(f"Personagem {self.nome} morreu ao tomar a poção.")
+                return
+            
+            print(f"Dano aplicado: {pocao.potencia}\nTotal de saúde: {self.saude}\n")
+            
 class PocaoVerde:
     def __init__(self, tipo, potencia):
         self.tipo = tipo
         self.potencia = potencia
-
+        
 class PocaoRoxa:
     def __init__(self, tipo, potencia):
         self.tipo = tipo
-        self.potencia = -abs(potencia)  # Sempre dano negativo (veneno)
+        self.potencia = potencia
 
-# Instanciar Jogador
-p1 = Personagem("Chaves")
+p1 = Personagem("Pao")
+pocaoTop = PocaoVerde("Cura", 20)
+pocaoPaia = PocaoRoxa("Dano", 20)
 
-# Criar poções
-pocao1 = PocaoVerde("Cura", 15)
-pocao2 = PocaoRoxa("Veneno", 25)
 
-# Usar poções
-p1.usar_pocao(pocao1)  # Cura
-p1.usar_pocao(pocao2)  # Veneno
+p1.usar_pocao(pocaoTop)
+p1.usar_pocao(pocaoPaia)
+p1.usar_pocao(pocaoPaia)
+p1.usar_pocao(pocaoPaia)
+p1.usar_pocao(pocaoPaia)
+p1.usar_pocao(pocaoTop)
 
-# Tentando usar outra poção após a morte
-p1.usar_pocao(pocao1)
 
-# Mostra o objeto da poção (exemplo do del p1)
-del p1
-print(pocao1)
