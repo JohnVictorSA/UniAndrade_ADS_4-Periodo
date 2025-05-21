@@ -73,8 +73,8 @@ class PocaoRoxa:
         self.potencia = potencia
 
 p1 = Personagem("Pao")
-pocaoTop = PocaoVerde("Cura", 20)
-pocaoPaia = PocaoRoxa("Dano", 20)
+pocaoNaipe = PocaoVerde("Cura", 20)
+pocaoMorte = PocaoRoxa("Dano", 20)
 inventario = Inventario()
 faca = Item("Faca Tramontina", 120)
 escudo = Item("Escudo do rei", 90)
