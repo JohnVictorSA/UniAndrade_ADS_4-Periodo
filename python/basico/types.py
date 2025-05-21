@@ -10,7 +10,7 @@ class C(A, B):
 
 # Type Annotations
 idade: int = 32
-salario: float = 35000.50  # Corrigido
+salario: float = 35000.50 
 nome: str = "Julius"
 casado: bool = True
 
