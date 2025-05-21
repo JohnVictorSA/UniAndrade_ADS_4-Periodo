@@ -1,28 +1,39 @@
-
 class A:
-    ...#ellipsis
-class B:
-    ...#ellipsis
-class C(A, B):
-    ...#ellipsis
+    ...  # Ellipsis = código omitido
 
-#Type anotations
+class B:
+    ...
+
+class C(A, B):
+    ...
+
+
+# Type Annotations
 idade: int = 32
-salario: float + 35000.50
+salario: float = 35000.50  # Corrigido
 nome: str = "Julius"
 casado: bool = True
-dados: dict = {"nome": nome, "salario": salario, "idade": idade}
-array: list = [2,5, "ju", 25, 25, 25]
-tupla: tuple = (2,5, 25, 25)
-unico: set = {2,5,"ju", 25, 25, 25 }
 
-# print(unico)
-print(nome.upper()) # metodo builtin
-print (vars(C))     # imprime class com dict
-#help(C)            # ajuda ver internamente
+dados: dict = {"nome": nome, "salario": salario, "idade": idade}
+array: list = [2, 5, "ju", 25, 25, 25]
+tupla: tuple = (2, 5, 25, 25)
+unico: set = {2, 5, "ju", 25, 25, 25}
+
+# Prints e testes
+print(unico)               # set elimina duplicatas
+print(nome.upper())        # Método builtin -> JULIUS
+print(vars(C))             # Imprime atributos da classe C (herança)
+# help(C)                  # Mostra informações da classe no console
+
+# Mudando valores
 nome: str = "Ana Paula"
 eh_casado: bool = True
-pessoa: A = A() #Tipo personalizado
+
+# Instanciando classe
+pessoa: A = A()            # Tipo personalizado
+
+# Atributo dinâmico na classe A
 A.cargo = "diretor"
 
-print(A._dict_) # aramazena valores da class
+# Verificando os atributos da classe A
+print(A.__dict__)          # Mostra atributos da classe
