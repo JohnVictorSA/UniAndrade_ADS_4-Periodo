@@ -30,16 +30,22 @@ class Inventario:
             print(f"Itens {item.tipo}")
             
             
-# class Armadura:
-#       pass
+class Armadura:
+    def __init__(self, nome:str, protecao:int):
+        self.nome = nome
+        self.protecao = protecao
+        
+    def blind(self):
+        print("Sua protecao aumentou!")
+    
 
-            
 class Personagem:
-    def __init__(self, nome):
+    def __init__(self, nome, nome_armadura: Armadura, protecao:int ):
         self.nome = nome
         self.saude = 60
         self.vivo = True
-        self.inventario = Inventario() # Agregação 
+        self.armadura: Armadura(nome_armadura, protecao) # Composição
+        self.inventario = Inventario() # Agregação
         
     def usar_pocao(self, pocao):
         if (self.vivo == False):
