@@ -4,4 +4,4 @@ class Pocao:
         self.nome = nome
     
     def usar(self):
-        print(f"usou pocao: {self.nome} !") 
+        print(f"usou pocao: {self.nome} tomou!") 

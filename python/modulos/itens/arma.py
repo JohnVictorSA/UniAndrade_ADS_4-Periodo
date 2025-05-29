@@ -4,4 +4,4 @@ class Arma:
         self.nome = nome
     
     def usar(self):
-        print(f"usou arma: {self.nome} !") 
+        print(f"usou arma: {self.nome} usada!") 
