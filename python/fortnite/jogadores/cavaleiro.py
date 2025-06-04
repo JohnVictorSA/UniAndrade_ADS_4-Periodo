@@ -15,11 +15,11 @@ class Cavaleiro(Jogador):  #Herança
         self.saude += max(0, valor)
 
     def atacar(self):
-        print("Atacar Polimor")
+        print("Atacar Polimorfico")
         print(f"{self.nome} atacou!")
 
     def defender(self):
-        print("Defender Polimor")
+        print("Defender Polimorfico")
         print(f"{self.nome} defendeu!")
 
 if __name__ == '__main__':
