@@ -1,7 +1,9 @@
-from jogador import Jogador
+from jogadores.jogador import Jogador
 
 class Cavaleiro(Jogador):  #Herança
-    def __init__ (self, nome:str, dano:int):
+    def __init__ (self, nome:str, dano:int, resistencia=85, armadura="Diamante"):
+        self.armadura = armadura  #Atributos extras
+        self.resistencia = resistencia  #Atributos extras
         super().__init__(nome, dano)
 
         # self.__saude = 100  #Encapsulamento
