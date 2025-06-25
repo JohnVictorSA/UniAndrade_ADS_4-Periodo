@@ -1,4 +1,3 @@
-
 from jogadores.knight import Knight
 from jogadores.thief import Thief
 from jogadores.pyromancer import Pyromancer
